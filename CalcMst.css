@@ -1,0 +1,60 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-weight: normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #201206, #6d4907);
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(125px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: 1px solid rgb(255, 255, 255);
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, .9);
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in-out;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, .75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .top-display {
+  color: rgb(162, 218, 218);
+  font-size: 1.5rem;
+}
+
+.output .bottom-display {
+  color: azure;
+  font-size: 2.5rem;
+}
